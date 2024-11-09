@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Management Solutions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        nav {
+        background-color: #1f1b2e;
+        color: #f5f5f5;
+        padding: 1rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        font-size: large;
+        }
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #00d4ff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    color: #daadff;
+}
+        .solutions-container {
+            margin-top: 80px;
+            padding: 2rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .solution-card {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .solution-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .votes {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .vote-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #1a73e8;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .vote-btn:hover {
+            color: hsl(214, 82%, 61%);
+        }
+
+        .vote-count {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #bbbbbbd3;
+        }
+
+        .solution-form {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #bbbbbbd3;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .submit-btn {
+            background: #1a73e8;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #9b5de5;
+        }
+
+        .read-more {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .logo
+{
+    display: flex;
+    gap:2px;
+}
+.logo a
+{
+    text-decoration: none;
+    margin-top: 8px;
+    color:#A78BFA;
+    font-weight: bold;
+}
+.bxs-droplet
+{
+    margin-top: 7px;
+    font-size: 25px;
+    color:rgb(116,204,244);
+}
+.login_ button
+{
+ border-radius: 5px;
+ border: none;
+ font-size:20px;
+ margin-top: 2px;
+ padding:5px;
+ padding-top:2px;
+ background: none;
+ border:2px solid white;
+ color: white;
+ transition: all ease-in-out 0.1s;
+ cursor: pointer;
+}
+.login_ button:hover
+{
+    background-color:white;
+    color:black;
+    border:2px solid #1f1b2e;
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <i class='bx bxs-droplet'></i>
+            <a href="">AquaTrack</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="newsletter.html">Newsletter</a>
+            <a href="solution.html">Solutions</a>
+            <a href="water.html">Water Level</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="login_">
+            <a href="login.html" style="text-decoration: none;" >
+                <button id="lol">Login</button>
+            </a>
+        </div>
+        </nav>
+    <div class="solutions-container">
+        <h1 style="margin-bottom: 15px;">Top Community Solutions</h1>
+        <div id="solutions-list">
+        </div>
+        <div class="read-more">
+            <button class="submit-btn" id="load-more" onclick="alert('Ran Out Of Budget🙏')">Load More Solutions</button>
+        </div>
+
+        <div class="solution-form">
+            <h2>Submit Your Solution</h2>
+            <form id="submit-solution">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Solution</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const solutions = [
+            {
+                id: 1,
+                title: "Rainwater Harvesting System",
+                description: "Implementation of comprehensive rainwater harvesting systems in urban areas...",
+                votes: 245,
+                author: "WaterExpert123"
+            },
+            {
+                id: 2,
+                title: "Smart Irrigation Methods",
+                description: "Using IoT devices to optimize irrigation scheduling and water usage...",
+                votes: 189,
+                author: "TechSavvy"
+            },
+            {
+                id: 3,
+                title: "Community Water Management",
+                description: "Organizing community-led initiatives for water conservation...",
+                votes: 156,
+                author: "EcoWarrior"
+            }
+        ];
+        function createSolutionCard(solution) {
+            return `
+                <div class="solution-card">
+                    <div class="votes">
+                        <button class="vote-btn" onclick="vote(${solution.id})">
+                            <i class="fas fa-arrow-up"></i>
+                        </button>
+                        <span class="vote-count">${solution.votes}</span>
+                    </div>
+                    <h3>${solution.title}</h3>
+                    <p>${solution.description}</p>
+                    <small>Submitted by: ${solution.author}</small>
+                </div>
+            `;
+        }
+        function loadSolutions() {
+            const solutionsList = document.getElementById('solutions-list');
+            solutions.forEach(solution => {
+                solutionsList.innerHTML += createSolutionCard(solution);
+            });
+        }
+        function vote(id) {
+            const solution = solutions.find(s => s.id === id);
+            if (solution) {
+                solution.votes++;
+                updateUI();
+            }
+        }
+        function updateUI() {
+            const solutionsList = document.getElementById('solutions-list');
+            solutionsList.innerHTML = '';
+            solutions
+                .sort((a, b) => b.votes - a.votes)
+                .forEach(solution => {
+                    solutionsList.innerHTML += createSolutionCard(solution);
+                });
+        }
+        window.addEventListener('load', loadSolutions);
+        document.getElementById('submit-solution').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const newSolution = {
+                id: solutions.length + 1,
+                title: document.getElementById('title').value,
+                description: document.getElementById('description').value,
+                votes: 0,
+                author: "User" + Math.floor(Math.random() * 1000)
+            };
+            solutions.push(newSolution);
+            updateUI();
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+</body>
+</html>

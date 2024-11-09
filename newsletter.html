@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water News - Newsletter</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        nav {
+        background-color: #1f1b2e;
+        color: #f5f5f5;
+        padding: 1rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        font-size: large;
+        }
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #00d4ff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    color: #daadff;
+}
+        .news-container {
+            margin-top: 80px;
+            padding: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 280px;
+    color: #e0e0e0;
+    text-align: left;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.date {
+    font-size: 0.9em;
+    color: #b0b0b0;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.2em;
+    color: #f5f5f5;
+    margin-bottom: 10px;
+}
+
+.summary {
+    font-size: 0.95em;
+    color: #cccccc;
+}
+.read-more
+{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 20px;
+    font-size: large;
+    padding:8px;
+    border-radius: 10px;
+    border: 3px solid rgb(3, 180, 207);
+    cursor: pointer;
+    color:rgb(3, 180, 207);
+    transition: all ease-in-out 0.2s;
+    background-color: transparent;
+}
+.read-more:hover
+{
+    border: 3px solid hsl(188, 97%, 54%);
+    color:hsl(188, 97%, 54%);
+}
+.logo
+{
+    display: flex;
+    gap:2px;
+}
+.logo a
+{
+    text-decoration: none;
+    margin-top: 8px;
+    color:#A78BFA;
+    font-weight: bold;
+}
+.bxs-droplet
+{
+    margin-top: 7px;
+    font-size: 25px;
+    color:rgb(116,204,244);
+}
+.login_ button
+{
+ border-radius: 5px;
+ border: none;
+ font-size:20px;
+ margin-top: 2px;
+ padding:5px;
+ padding-top:2px;
+ background: none;
+ border:2px solid white;
+ color: white;
+ transition: all ease-in-out 0.1s;
+ cursor: pointer;
+}
+.login_ button:hover
+{
+    background-color:white;
+    color:black;
+    border:2px solid #1f1b2e;
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <i class='bx bxs-droplet'></i>
+            <a href="">AquaTrack</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="newsletter.html">Newsletter</a>
+            <a href="solution.html">Solutions</a>
+            <a href="water.html">Water Level</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="login_">
+            <a href="login.html" style="text-decoration: none;" >
+                <button id="lol">Login</button>
+            </a>
+        </div>
+    </nav>
+    <div class="news-container">
+        <h1>Latest Water News</h1>
+        <div class="news-grid" id="newsGrid">
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <a href="https://www.thehindu.com/news/national/telangana/study-shows-accelerating-groundwater-depletion-in-north-india/article68487352.ece" style="text-decoration: none;" target="_blank">
+                    <img src="Images/n1.avif" alt="">
+                <p class="date">2024-03-15</p>
+                <h3>Ground Water Levels Drop in Northern India</h3>
+                <p class="summary">Recent studies show concerning trends in ground water depletion across northern states...</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="https://pib.gov.in/PressReleasePage.aspx?PRID=2052494#:~:text=To%20further%20the%20Prime%20Minister's,whole%2Dof%2Dgovernment%20approach." target="_blank" style="text-decoration: none;">
+                    <img src="Images/n2.webp" alt="">
+                    <p class="date">2024-03-14</p>
+                    <h3>New Water Conservation Policy Announced</h3>
+                    <p class="summary">Government introduces comprehensive water management framework...</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="https://southasia.iclei.org/news/from-frost-to-flow-an-exemplary-community-led-initiative-for-water-supply-in-ladakh-india/" target="_blank" style="text-decoration: none;">
+                    <img src="Images/n3.jpg" alt="">
+                    <p class="date">2024-03-13</p>
+                    <h3>Community-Led Water Preservation Initiative</h3>
+                    <p class="summary">Local communities band together to implement innovative water saving techniques...</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="https://economictimes.indiatimes.com/news/india/delhis-groundwater-has-high-levels-of-salt-that-are-dangerous-for-kidneys-report/articleshow/113422739.cms?from=mdr" target="_blank" style="text-decoration: none;">
+                    <img src="Images/n4.webp" alt="">
+                    <p class="date">2024-09-17</p>
+                    <h3>Delhi's Groundwater are dangerous for Kidneys</h3>
+                    <p class="summary">Over 25% of Delhi’s water samples show unsafe salinity levels, posing kidney health risks and the need for improved water management...</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="https://economictimes.indiatimes.com/news/economy/indicators/rising-water-stress-to-hurt-indias-credit-strength-moodys/articleshow/111246813.cms?from=mdr" target="_blank" style="text-decoration: none;">
+                    <img src="Images/n5.webp" alt="">
+                    <p class="date">2024-06-25</p>
+                    <h3>Bubbling Water Crisis can spark Social Unrest</h3>
+                    <p class="summary">Reduced water availability has the potential to interrupt both agricultural and industrial activities, leading to increased food prices...</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="https://www.hindustantimes.com/technology/world-earth-day-2023-indian-start-up-makes-water-from-air-sustainable-climate-solution-or-mere-fancy-101682126653978.html" target="_blank" style="text-decoration: none;">
+                    <img src="Images/n6.webp" alt="">
+                    <p class="date">2024-08-11</p>
+                    <h3>Drawing Water from Air on a Sustainable Scale</h3>
+                    <p class="summary">Uravu Labs devises an affordable means of mimicking nature’s water cycle...</p>
+                </a>
+            </div>
+        </div>
+        <button class="read-more" id="read_">Read More</button>
+    </div>
+    <script src="lol.js"></script>
+</body>
+</html>
